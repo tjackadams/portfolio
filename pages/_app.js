@@ -22,7 +22,7 @@ function Application({ Component, pageProps }) {
                 <title>Next.js Starter!</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
                 <link
                     rel="preload"
