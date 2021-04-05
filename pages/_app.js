@@ -1,7 +1,57 @@
-import '@styles/globals.css'
+import { Fragment, useEffect } from 'react';
+import { CssBaseline } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from '@styles/theme';
+import '@styles/globals.css';
+import Layout from '../components/Layout';
+import Head from 'next/head';
 
 function Application({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+    useEffect(() => {
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side');
+        if (jssStyles) {
+            jssStyles.parentElement.removeChild(jssStyles);
+        }
+    }, []);
+  
+    return (
+        <Fragment>
+            <Head>
+                <title>Next.js Starter!</title>
+                <link rel="icon" href="/favicon.ico" />
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+
+                <link
+                    rel="preload"
+                    as="style"
+                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                />
+
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                    media="print"
+                    onload="this.media='all'"
+                />
+
+                <noscript>
+                    <link
+                        rel="stylesheet"
+                        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                    />
+                </noscript>
+            </Head>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </ThemeProvider>
+        </Fragment>
+    );
 }
 
-export default Application
+export default Application;
