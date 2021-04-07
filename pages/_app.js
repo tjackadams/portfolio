@@ -23,7 +23,6 @@ function Application({ Component, pageProps }) {
                     Freelance Web Developer & Software Developer base in Mansfield, England. Highly experienced in
                     developing bespoke websites & software.
                 </description>
-                <link rel="icon" href="/favicon.ico" />
                 <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
